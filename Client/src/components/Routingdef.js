@@ -1,12 +1,6 @@
-
-import Loginpage from './Loginpage';
-import Dashboard from './Dashboard';
-import Header from './Header';
-import Addclaim from './Addclaim';
-import Editclaim from './Editclaim';
-import Cancelclaim from './Cancelclaim';
-import Deleteclaim from './Deleteclaim';
 import { Route, Routes } from "react-router-dom";
+import Itinerary from './Itinerary';
+
 
 const Routingdef = () => {
   return (
@@ -16,12 +10,12 @@ const Routingdef = () => {
         path='/'
         element = {
           <div className="container">
-            <Loginpage />
+            <Itinerary />
           </div>
         }
       />
     
-      <Route 
+      {/* <Route 
         path="/Dashboard" 
         element={
           <div className="container2"> 
@@ -29,7 +23,7 @@ const Routingdef = () => {
             <Dashboard />
           </div>
         } 
-      />
+      /> */}
 
 
       <Route 
@@ -37,14 +31,13 @@ const Routingdef = () => {
         element={
           <>
             <div className="container2">
-              <Header /> 
-              <Addclaim />
+              <Itinerary/>
             </div>
           </>
         } 
       />
 
-      <Route 
+      {/* <Route 
         path='/Destination' 
         element={
           <>
@@ -54,9 +47,9 @@ const Routingdef = () => {
             </div>
           </>
         } 
-      />
+      /> */}
 
-      <Route 
+      {/* <Route 
         path='/CancelIternary/:id' 
         element={
           <>
@@ -79,7 +72,7 @@ const Routingdef = () => {
             </div>
           </>
         } 
-      />
+      /> */}
     
     </Routes>
 
