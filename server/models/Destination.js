@@ -11,6 +11,9 @@ module.exports = (sequelize, Sequelize) => {
             country_id: {
                 type: Sequelize.INTEGER,
                 foreignKey: true
+            },
+            name: {
+                type: Sequelize.STRING
             }
         },
         {
