@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // models
-const User = db.users;
+const User = db.user;
 
 // get all users
 const getAllUsers = async (req, res) => {
