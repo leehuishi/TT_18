@@ -1,5 +1,6 @@
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
+import addDestination from './addDestination';
 
 const Headerafter = () => {
 
@@ -29,7 +30,7 @@ const Headerafter = () => {
     //=========================================================
     //Add Destination
     const addDestination = () => {
-        navigate('/Destination');
+        navigate('/addDestination');
     };
     //=========================================================
 

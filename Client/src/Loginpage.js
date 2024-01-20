@@ -2,7 +2,7 @@ import Header from './Header';
 import Loginform from './Loginform';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-// import bcrypt from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 
 const Loginpage = () => {
     sessionStorage.clear();
@@ -10,7 +10,7 @@ const Loginpage = () => {
     const navigate = useNavigate();
 
     //=================================================================
-    //Function: Fetch user detail (can work on hans laptop)
+    //Function: Fetch user detail 
     //=================================================================
     const loginUser = async (userdetails) => {
         return fetch('http://localhost:3001/api/users/login', {
@@ -34,7 +34,7 @@ const Loginpage = () => {
     }
 
     //=========================================================
-    //Function: Check credential (can work on hans laptop)
+    //Function: Check credential 
     //=========================================================
     const checkcrediential = async (logincred) => {
         
