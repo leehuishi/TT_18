@@ -10,6 +10,15 @@ module.exports = (sequelize, Sequelize) => {
             },
             country_id: {
                 type: Sequelize.INTEGER
+            },
+            cost: {
+                type: Sequelize.FLOAT
+            },
+            name: {
+                type: Sequelize.STRING
+            },
+            notes: {
+                type: Sequelize.STRING
             }
         },
         {

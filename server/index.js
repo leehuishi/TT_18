@@ -23,8 +23,10 @@ db.sequelize.authenticate().then(() => {
 
 // routers
 const userRouter = require('./routes/UserRoutes.js');
+const destinationRouter = require('./routes/DestinationRoutes.js');
 
 app.use('/api/users', userRouter);
+app.use('/api/destination', destinationRouter);
 
 app.get("/", (req, res) => {
     res.send("Hello world");
