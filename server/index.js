@@ -15,11 +15,16 @@ app.use(bodyParser.json());
 
 db.sequelize.authenticate().then(() => {
     console.log('Connection established successfully.');
-    console.log('Connection established successfully.');
   }).catch(err => {
     console.error('Unable to connect to the database: ', err);
   });
 
+
+db.sequelize.sync({force: false})
+  .then(() => {
+      console.log("Synced db.");
+  })
+  
 // routers
 const userRouter = require('./routes/UserRoutes.js');
 

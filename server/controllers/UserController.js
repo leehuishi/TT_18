@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 
 // models
 const User = db.user;
+const blacklistTokens = db.blacklistToken;
 
 // get all users
 const getAllUsers = async (req, res) => {
@@ -44,7 +45,25 @@ const loginUser = async (req, res) => {
     }
   };
 
+const logoutUser = async (req, res) => {
+    const curr_user = req.user;
+    console.log("LOGOUT USER FUNCTION");
+    
+    const Token = {
+        token:req.token
+    };
+
+    const blacklistedToken = await blacklistTokens.create(Token);
+
+
+    res.status(200).send({
+        user: curr_user,
+        message: "Succesful Logout"
+    })
+}
+
 module.exports = {
     getAllUsers,
-    loginUser
+    loginUser,
+    logoutUser
 }
