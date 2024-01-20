@@ -11,7 +11,9 @@ const PORT = 3001;
 
 const app = express();
 
+
 app.use(cors());
+
 app.use(bodyParser.json());
 
 db.sequelize.authenticate().then(() => {
@@ -20,6 +22,12 @@ db.sequelize.authenticate().then(() => {
     console.error('Unable to connect to the database: ', err);
   });
 
+
+db.sequelize.sync({force: false})
+  .then(() => {
+      console.log("Synced db.");
+  })
+  
 // routers
 const userRouter = require('./routes/UserRoutes.js');
 const itineraryRouter = require('./routes/ItineraryRoutes.js');
