@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -28,6 +28,13 @@ body {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+}
+
+.container3 {
+  max-width: 1000px;
+  margin: 30px auto;
+  overflow: auto;
+  display: flex;
 }
 
 .header {
@@ -143,7 +150,6 @@ td {
   border-top: 1px solid black;
 }
 
-
 .form-control2 {
   margin: 20px 0;
 }
@@ -182,36 +188,78 @@ td {
 }
 
 .error {
-  color:red;
+  color: red;
 }
 
-.form-control {
-  margin: 20px 0;
+/* CSS For Destination.js */
+
+.destination-form-container {
+  text-align: center;
+  padding: 20px;
 }
 
-.form-control label {
-  display: block;
+.destination-form {
+  background: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-control input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
-}
-
-.form-control-check {
+.input-group {
+  margin-bottom: 15px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.form-control-check label {
-  flex: 1;
+.input-group label {
+  margin-bottom: 5px;
 }
 
-.form-control-check input {
-  flex: 2;
-  height: 20px;
+.input-group input[type="text"],
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-group textarea {
+  resize: vertical;
+  height: 35px; /* Adjust to match the height of input boxes */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.destination-form button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.destination-form button:hover {
+  background-color: #45a049;
+}
+
+.destination-form .cancel-button {
+  background-color: #f44336;
+}
+
+.destination-form .cancel-button:hover {
+  background-color: #d32f2f;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
 }
