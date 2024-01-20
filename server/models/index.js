@@ -1,6 +1,5 @@
 const dbConfig = require("../config/db_config.js");
 
-
 // Setting up sequelize instance with required models
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {

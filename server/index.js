@@ -1,7 +1,6 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 const db = require("./models");
 
@@ -14,12 +13,16 @@ const app = express();
 // app.use(cors);
 app.use(bodyParser.json());
 
-
 db.sequelize.authenticate().then(() => {
     console.log('Connection established successfully.');
   }).catch(err => {
-    console.error('Unable to connect to the database:', err);
-  })
+    console.error('Unable to connect to the database: ', err);
+  });
+
+// routers
+const userRouter = require('./routes/user_routes.js');
+
+app.use('/api/users', userRouter);
 
 
 // routers

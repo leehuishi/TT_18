@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+
 module.exports = {
     HOST: "localhost",
     USER: "root",
