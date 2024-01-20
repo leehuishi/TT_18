@@ -20,7 +20,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.Op = Sequelize.Op;
 
-db.users = require("./User.js")(sequelize, Sequelize);
+db.user = require("./User.js")(sequelize, Sequelize);
 // db.posts = require("./posts_model.js")(sequelize, Sequelize);
 // db.blacklistToken = require('./blacklist_jwt.js')(sequelize, Sequelize);
 

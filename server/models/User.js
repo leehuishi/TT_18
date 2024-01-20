@@ -8,10 +8,10 @@ module.exports = (sequelize, Sequelize) => {
         autoIncrement: true,
         primaryKey: true
       }, 
-      firstname: {
+      first_name: {
         type: Sequelize.STRING
       },
-      lastname: {
+      last_name: {
         type: Sequelize.STRING
       },
       username: {
@@ -19,25 +19,15 @@ module.exports = (sequelize, Sequelize) => {
       },
       password: {
         type: Sequelize.STRING
-      },
-      created_at: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updated_at: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     },
     {
       // Options
       timestamps: true,
       underscrored: true,
-      createdAt: "created_at",
-      updatedAt: "updated_at"
-    }, 
-    {
-      tableName:'users'
+      createdAt: false,
+      updatedAt: false,
+      tableName:'user'
     }
     );
     return User;
