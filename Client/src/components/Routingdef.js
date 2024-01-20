@@ -1,6 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import Itinerary from './Itinerary';
 
+import Loginpage from './Loginpage';
+import Dashboard from './Dashboard';
+import Header from './Header';
+import Headerafter from './Headerafter';
+import Itinerary from './Itinerary';
+import Destination from './addDestination';
+import EditDestination from './EditDestination';
+// import Cancelclaim from './Cancelclaim';
+import DeleteDestination from './DeleteDestination';
+import { Route, Routes } from "react-router-dom";
 
 const Routingdef = () => {
   return (
@@ -10,12 +18,12 @@ const Routingdef = () => {
         path='/'
         element = {
           <div className="container">
-            <Itinerary />
+            <Loginpage />
           </div>
         }
       />
     
-      {/* <Route 
+      <Route 
         path="/Dashboard" 
         element={
           <>
@@ -26,7 +34,7 @@ const Routingdef = () => {
           </>
           
         } 
-      /> */}
+      />
 
 
       <Route 
@@ -34,25 +42,24 @@ const Routingdef = () => {
         element={
           <>
             <div className="container2">
-              <Itinerary/>
+              <Itinerary />
             </div>
           </>
         } 
       />
 
-      {/* <Route 
-        path='/Destination' 
+      <Route 
+        path='/addDestination' 
         element={
           <>
             <div className="container2">
-              <Header /> 
-              {/* <Editclaim /> */}
+              <Destination />
             </div>
           </>
         } 
-      /> */}
+      />
 
-      {/* <Route 
+      <Route 
         path='/CancelIternary/:id' 
         element={
           <>
@@ -77,17 +84,29 @@ const Routingdef = () => {
         } 
       />
 
-<Route 
+      <Route 
         path='/DeleteDestination/:id' 
         element={
           <>
             <div className="container2">
               <Header /> 
-              {/* <Deleteclaim /> */}
+              <DeleteDestination />
             </div>
           </>
         } 
-      /> */}
+      />
+
+<Route 
+        path='/EditDestination/:id' 
+        element={
+          <>
+            <div className="container2">
+              <Header /> 
+              <EditDestination />
+            </div>
+          </>
+        } 
+      />
     
     </Routes>
 

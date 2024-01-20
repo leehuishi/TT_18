@@ -1,8 +1,9 @@
-import Routingdef from "./components/Routingdef";
-import Destination from "./components/Destination";
+import Routingdef from './components/Routingdef';
 
 function App() {
-  return <Routingdef />;
+  return (
+    <Routingdef />
+  );
 }
 
 export default App;

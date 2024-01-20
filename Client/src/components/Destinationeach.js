@@ -7,21 +7,21 @@ const Destinationeach = ({ destination }) => {
 
   
   // Edit Destination
-  const editDestination = async () => {
-    navigate(`/Destination`);
+  const editDestination = async (destinationid) => {
+    navigate(`/EditDestination/${destinationid}`);
 }
 
 // Delete Destination
-const DeleteDestination = async (destination) => {
-    navigate(`/DeleteDestination/${destination}`);
+const DeleteDestination = async (destinationid) => {
+    navigate(`/DeleteDestination/${destinationid}`);
 }
   return (
     <tr>
-        <td style={{paddingRight: '5px'}}>{destination}</td>
+        <td style={{paddingRight: '5px'}}>{destination.name}</td>
         <td>
-          <FaEdit style={{cursor:'pointer'}} onClick={() => editDestination(destination)}/>
+          <FaEdit style={{cursor:'pointer'}} onClick={() => editDestination(destination.id)}/>
           &nbsp;&nbsp;
-          <FaTimes style={{color: 'red', cursor:'pointer'}} onClick={() => DeleteDestination(destination)} />
+          <FaTimes style={{color: 'red', cursor:'pointer'}} onClick={() => DeleteDestination(destination.id)} />
         </td>
     </tr>
     

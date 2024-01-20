@@ -62,43 +62,49 @@ const Loginpage = () => {
             // const res = await loginUser(emp_id, hashPassword);
 
             //-----------------------------------------------
-            const userdetails = {
-                "username": username_input,
-                "password":password_input
+            // const userdetails = {
+            //     "username": username_input,
+            //     "password":password_input
 
-            }
+            // }
 
-            const res = await loginUser(userdetails);
+            // const res = await loginUser(userdetails);
 
-            const checkerror = 'error' in res;
+            // const checkerror = 'error' in res;
 
-            if(checkerror){
-                //fetch error
-                const error_msg = res['error'];
-                setError(error_msg);
-            }
-            else{
-                //fetch successful - check result
-                const data = await res.json();
-                const checkerror2 = 'error' in data;
+            // if(checkerror){
+            //     //fetch error
+            //     const error_msg = res['error'];
+            //     setError(error_msg);
+            // }
+            // else{
+            //     //fetch successful - check result
+            //     const data = await res.json();
+            //     const checkerror2 = 'error' in data;
 
-                if(checkerror2){
-                    //return error (e.g. invalid credential)
-                    const error_msg = data['error'];
-                    setError(error_msg);
-                }
-                else{
-                    // console.log(data);
-                    const token = data['token'];
-                    sessionStorage.setItem("user_id", 1);
-                    sessionStorage.setItem("name", 'Rose');
-                    sessionStorage.setItem("token", token);
+            //     if(checkerror2){
+            //         //return error (e.g. invalid credential)
+            //         const error_msg = data['error'];
+            //         setError(error_msg);
+            //     }
+            //     else{
+            //         // console.log(data);
+            //         const token = data['token'];
+            //         sessionStorage.setItem("user_id", 1);
+            //         sessionStorage.setItem("name", 'Rose');
+            //         sessionStorage.setItem("token", token);
 
 
-                    setError("");
-                    navigate('/Dashboard');
-                }
-            }
+            //         setError("");
+            //         navigate('/Dashboard');
+            //     }
+            // }
+
+            // const token = data['token'];
+            sessionStorage.setItem("user_id", 1);
+            sessionStorage.setItem("name", 'Rose');
+            sessionStorage.setItem("token", 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlciI6ImpvaG5kb2UiLCJpYXQiOjE3MDU3MzA3ODYsImV4cCI6MTcwNjA5MDc4Nn0.c_ziXvgI6wW8sALGaVOfW7rHiC92ceJbkZhmFPHPGFE');
+            navigate('/Dashboard');
         }
     };
 
