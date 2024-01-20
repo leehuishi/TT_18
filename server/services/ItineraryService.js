@@ -5,8 +5,8 @@ const Itinerary = db.itinerary;
 const Country = db.country;
 const Destination = db.destination;
 
-const getAllItineraries = async (userId) => {
-    const itineraries = Itinerary.findAll({
+const getAllItinerariesByUserId = async (userId) => {
+    const itineraries = await Itinerary.findAll({
         where: { user_id: userId },
         include: [{
             model: Country,
@@ -17,10 +17,12 @@ const getAllItineraries = async (userId) => {
             }]
         }],
     });
+
+    // console.log(itineraries[0].dataValues);
     return itineraries;
 }
 
 
 module.exports = {
-    getAllItineraries
+    getAllItineraries: getAllItinerariesByUserId
 }

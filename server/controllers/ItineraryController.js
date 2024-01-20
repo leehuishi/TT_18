@@ -1,7 +1,7 @@
 const ItineraryService = require('../services/ItineraryService');
 
 const getAllItineraries = async (req, res) => {
-    const itineraries = await ItineraryService.getAllItineraries(1)
+    const itineraries = await ItineraryService.getAllItineraries(req.user.id)
         .then(result => {
             res.status(200).send(result);
         }).catch(err => {
@@ -10,6 +10,9 @@ const getAllItineraries = async (req, res) => {
     res.status(200).send(itineraries);
 }
 
+// const createItinerary = async (req, res) => {
+//     await ItineraryService.
+// }
 
 module.exports = {
     getAllItineraries
