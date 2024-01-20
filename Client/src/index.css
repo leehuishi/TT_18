@@ -188,7 +188,11 @@ td {
 }
 
 .error {
-  color: red;
+  color:red;
+}
+
+.added {
+  color: green;
 }
 
 .form-control {
@@ -293,4 +297,9 @@ td {
   color: red;
   font-size: 0.9em;
   margin-top: 5px;
+}
+.drop-down {
+  margin: 5px;
+  height: 40px;
+  width: 438px;
 }
