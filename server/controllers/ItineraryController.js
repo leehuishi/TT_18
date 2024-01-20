@@ -15,11 +15,14 @@ const getAllItineraries = async (req, res) => {
 
 const createItinerary = async (req, res) => {
     const curr_user = req.user;
+
+    
     const itinerayInfo = {
-        user_id:curr_user.id,
-        country_id:req.body.country_id,
+        user_id:1,
+        country_id: 1,
         budget:req.body.budget,
         title:req.body.title
+
     }
     const iti_model = await Itinerary.create(itinerayInfo)
     res.status(200).send(iti_model);
