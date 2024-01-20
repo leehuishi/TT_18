@@ -10,16 +10,13 @@ const blacklistTokens = db.blacklistToken;
 
 // login User and authenthicate using jwt
 // login user
-const loginUser = async (req, res) => {
-    // Validate Request
-
 const createUser = async (req, res) => {
   // Validate Request 
   if (!req.body.username){
       res.status(400).send({
           message:"Username cannot be empty"
       })
-  };
+  }
   const pw_salt = genSaltSync(10);
   req.body.password = hashSync(req.body.password, pw_salt);
 
@@ -28,7 +25,7 @@ const createUser = async (req, res) => {
       password:req.body.password,
       first_name: req.body.fname,
       last_name: req.body.lname
-  };
+  }
 
   const user_model = await User.create(user_info);
   res.status(200).send("Created User");
@@ -37,7 +34,7 @@ const createUser = async (req, res) => {
 // login User and authenthicate using jwt
 // login user
 const loginUser = async (req, res) => {
-    
+
     // // Validate Request with Hash
     // if (!req.body.username || !req.body.password){
     //   res.status(400).send({
@@ -45,13 +42,13 @@ const loginUser = async (req, res) => {
     //   })
     // };
 
-    // let user_hash = await User.findOne({ 
-    //     where: { 
+    // let user_hash = await User.findOne({
+    //     where: {
     //         username: req.body.username
     //     }
     // });
     // const result_hash = compareSync(req.body.password, user.password);
-    // 
+    //
 
     // Validate Request no hash
 
@@ -61,8 +58,8 @@ const loginUser = async (req, res) => {
         })
     }
 
-    let user = await User.findOne({ 
-        where: { 
+    let user = await User.findOne({
+        where: {
             username: req.body.username
         }
     });
@@ -72,7 +69,7 @@ const loginUser = async (req, res) => {
       return res.json({
         success: 1,
         message: "login successfully",
-        user:user.username, 
+        user:user.username,
         token: jsontoken
       });
     } else {
@@ -81,13 +78,13 @@ const loginUser = async (req, res) => {
         data: "Invalid email or password"
       });
     }
-  };
+  }
 
 const logoutUser = async (req, res) => {
     const curr_user = req.user;
 
     console.log("LOGOUT USER FUNCTION");
-    
+
     const Token = {
         token:req.token
     };
@@ -99,6 +96,7 @@ const logoutUser = async (req, res) => {
         message: "Successful Logout"
     })
 }
+
 
 module.exports = {
     loginUser,
