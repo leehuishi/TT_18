@@ -16,20 +16,20 @@ app.use(bodyParser.json());
 
 db.sequelize.authenticate().then(() => {
     console.log('Connection established successfully.');
-    console.log('Connection established successfully.');
   }).catch(err => {
     console.error('Unable to connect to the database: ', err);
   });
 
 // routers
 const userRouter = require('./routes/UserRoutes.js');
+const itineraryRouter = require('./routes/ItineraryRoutes.js');
 
 app.use('/api/users', userRouter);
+app.use('/api/itineraries', itineraryRouter);
 
 app.get("/", (req, res) => {
     res.send("Hello world");
 })
-
 
 app.listen(PORT, () => {
     console.log(`Server Running on http://localhost:${PORT}`);
