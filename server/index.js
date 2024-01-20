@@ -10,7 +10,7 @@ const PORT = 3001;
 
 const app = express();
 
-// app.use(cors);
+// app.use(cors());
 app.use(bodyParser.json());
 
 db.sequelize.authenticate().then(() => {
