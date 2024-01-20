@@ -1,9 +1,9 @@
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 
 module.exports = {
     HOST: "localhost",
-    USER: "root",
-    PASSWORD: "password",
+    USER: process.env.DB_USERNAME,
+    PASSWORD: process.env.DB_PASSWORD,
     DB: "techtrek24",
     dialect: "mysql",
     pool: {
