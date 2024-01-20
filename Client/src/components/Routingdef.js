@@ -2,6 +2,7 @@
 import Loginpage from './Loginpage';
 import Dashboard from './Dashboard';
 import Header from './Header';
+import Headerafter from './Headerafter';
 import Addclaim from './Addclaim';
 import Editclaim from './Editclaim';
 import Cancelclaim from './Cancelclaim';
@@ -24,10 +25,13 @@ const Routingdef = () => {
       <Route 
         path="/Dashboard" 
         element={
-          <div className="container2"> 
-            <Header />
-            <Dashboard />
-          </div>
+          <>
+            <Headerafter />
+            <div className="container2"> 
+              <Dashboard />
+            </div>
+          </>
+          
         } 
       />
 
