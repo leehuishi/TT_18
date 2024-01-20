@@ -8,22 +8,11 @@ const dotenv = require('dotenv');
 const User = db.user;
 const blacklistTokens = db.blacklistToken;
 
-// get all users
-const getAllUsers = async (req, res) => {
-    let users = await User.findAll({});
-    res.status(200).send(users);
-}
-
 // login User and authenthicate using jwt
 // login user
 const loginUser = async (req, res) => {
-    // Validate Request 
-    console.log(req.body)
-    console.log(req.body.username)
-    console.log(req.body.password)   
+    // Validate Request
     if (!req.body.username || !req.body.password){
-        console.log(req.body.username)
-        console.log(req.body.password)       
         res.status(400).send({
             message:"Username or password cannot be empty"
         })
@@ -68,7 +57,6 @@ const logoutUser = async (req, res) => {
 }
 
 module.exports = {
-    getAllUsers,
     loginUser,
     logoutUser
 }
