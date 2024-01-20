@@ -1,22 +1,19 @@
 import Itineraryeach from './Itineraryeach'
 
-const ItineraryList = ({ claims, onCancel, onEdit, onDelete }) => {
+const ItineraryList = ({ itineraryall, onEdit, onDelete }) => {
   return (
     <>
       <table>
         <tr>
           {/* <th style={{width: '200px'}}>Claim ID</th> */}
-          <th style={{width: '8%', paddingRight: '5px'}}>Claim ID</th>
-          <th style={{width: '8%'}}>Proj ID</th>
-          <th style={{width: '18%'}}>Proj Name</th>
-          <th style={{width: '20%'}}>Expense Date</th>
-          <th style={{width: '12%'}}>Amt</th>
-          <th style={{width: '17%'}}>Purpose</th>
-          <th style={{width: '10%'}}>Status</th>
+          <th style={{width: '8%', paddingRight: '5px'}}>Itinerary ID</th>
+          <th style={{width: '8%'}}>Country</th>
+          <th style={{width: '18%'}}>Budget</th>
+          <th style={{width: '20%'}}>Destination</th>
           <th style={{width: '7%'}}>Action</th>
         </tr>
-        {claims.map((claim) => (
-          <Itineraryeach key={claim.ClaimID} claim={claim} onCancel={onCancel} onEdit={onEdit} onDelete={onDelete} />
+        {itineraryall.map((itinerary) => (
+          <Itineraryeach key={itinerary.id} itinerary={itinerary} onEdit={onEdit} onDelete={onDelete} />
         ))}
       </table>
     </>

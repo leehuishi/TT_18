@@ -53,46 +53,54 @@ const ItineraryList = () => {
             const list = [
                 {  
                     'id': 1,
-                    'country_id':1,
-                    'user_id':1,
+                    'country_name':'Singapore',
                     'budget':500,
-                    'title':'Sightseeing in Singapore'
+                    'destination':['Marina Bay Sands', 'Gardens by the Bay']
                 },
                 {  
                     'id': 2,
-                    'country_id':1,
-                    'user_id':1,
+                    'country_name':'Singapore',
                     'budget':800,
-                    'title':'Singapore Adventure'
+                    'destination':['Sentosa Island','Universal Studios Singapore']
                 }
 
             ]
-            setClaims(claimsFromServer);
+            setItineraryall(list);
         }
         getItinerary();
     }, []);
 
 
-    // Cancel Task
-    const cancelClaim = async (claim_id) => {
-        navigate(`/Cancelclaim/${claim_id}`);
+    // // Cancel Task
+    // const cancelClaim = async (claim_id) => {
+    //     navigate(`/Cancelclaim/${claim_id}`);
+    // }
+
+
+    // // Edit claim
+    // const editClaim = async (claim_id) => {
+    //     navigate(`/Editclaim/${claim_id}`);
+    // }
+
+    // // Delete claim
+    // const deleteClaim = async (claim_id) => {
+    //     navigate(`/Deleteclaim/${claim_id}`);
+    // }
+
+    // Edit Itinerary
+    const editItinerary = async () => {
+        navigate(`/Itinerary`);
     }
 
-
-    // Edit claim
-    const editClaim = async (claim_id) => {
-        navigate(`/Editclaim/${claim_id}`);
-    }
-
-    // Delete claim
-    const deleteClaim = async (claim_id) => {
-        navigate(`/Deleteclaim/${claim_id}`);
+    // Delete Itinerary
+    const DeleteIternary = async (i_id) => {
+        navigate(`/DeleteIternary/${i_id}`);
     }
 
     return (
         <>
             {(error !== "") ? (<div className="error" style={{paddingBottom: 20}}>{error}</div>) : ""}    
-            {claims.length > 0 && error === "" ? <ItineraryList2 claims={claims} onCancel={cancelClaim} onEdit={editClaim} onDelete={deleteClaim} />: ('No Claims To Show')}
+            {itineraryall.length > 0 && error === "" ? <ItineraryList2 itineraryall={itineraryall} onEdit={editItinerary} onDelete={DeleteIternary} />: ('No Iternary To Show')}
         </>
     )
 }
