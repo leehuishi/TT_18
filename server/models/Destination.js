@@ -9,7 +9,8 @@ module.exports = (sequelize, Sequelize) => {
                 primaryKey: true
             },
             country_id: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                foreignKey: true
             },
             cost: {
                 type: Sequelize.FLOAT

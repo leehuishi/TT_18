@@ -18,7 +18,12 @@ const getAllUsers = async (req, res) => {
 // login user
 const loginUser = async (req, res) => {
     // Validate Request 
+    console.log(req.body)
+    console.log(req.body.username)
+    console.log(req.body.password)   
     if (!req.body.username || !req.body.password){
+        console.log(req.body.username)
+        console.log(req.body.password)       
         res.status(400).send({
             message:"Username or password cannot be empty"
         })
@@ -47,6 +52,7 @@ const loginUser = async (req, res) => {
 
 const logoutUser = async (req, res) => {
     const curr_user = req.user;
+
     console.log("LOGOUT USER FUNCTION");
     
     const Token = {
@@ -55,9 +61,8 @@ const logoutUser = async (req, res) => {
 
     const blacklistedToken = await blacklistTokens.create(Token);
 
-
     res.status(200).send({
-        user: curr_user,
+        user_info: curr_user,
         message: "Succesful Logout"
     })
 }

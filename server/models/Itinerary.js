@@ -2,7 +2,7 @@ module.exports = (sequelize, Sequelize) => {
     const Itinerary = sequelize.define(
         "itinerary",
         {
-            id:{
+            id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 autoIncrement: true,
@@ -24,12 +24,12 @@ module.exports = (sequelize, Sequelize) => {
             }
         },
         {
-            tableName:'itinerary_destination',
+            tableName:'itinerary',
             underscored: true,
             createdAt: false,
             updatedAt: false
         }
     );
 
-    return ItineraryDestination;
+    return Itinerary;
 };

@@ -21,24 +21,34 @@ db.sequelize = sequelize;
 db.Op = Sequelize.Op;
 
 db.user = require("./User.js")(sequelize, Sequelize);
-db.blacklistToken = require('./BlackList.js')(sequelize, Sequelize);
+db.itinerary = require("./Itinerary.js")(sequelize, Sequelize);
+db.country = require("./Country.js")(sequelize, Sequelize);
 db.destination = require("./Destination.js")(sequelize, Sequelize);
-// db.posts = require("./posts_model.js")(sequelize, Sequelize);
-// db.blacklistToken = require('./blacklist_jwt.js')(sequelize, Sequelize);
+db.blacklistToken = require('./BlackList.js')(sequelize, Sequelize);
 
-// db.users.hasMany(db.posts, {
-//   foreignKey: {
-//     name: "userId",
-//     allowNull: false
-//   },
-//   onDelete: "CASCADE"
-// });
+// foreign key mapping
+db.itinerary.belongsTo(db.country, {
+  foreignKey: {
+    name: "country_id",
+    allowNull: false
+  },
+  onDelete: "CASCADE"
+});
 
-// db.posts.belongsTo(db.users, {
-//   foreignKey: {
-//     name: "userId", // create new column called userId as fkey in posts
-//     allowNull: false
-//   }
-// });
+db.country.hasMany(db.destination, {
+  foreignKey: {
+    name: "country_id",
+    allowNull: false
+  },
+  onDelete: "CASCADE"
+});
+
+db.destination.belongsTo(db.country, {
+  foreignKey: {
+    name: "country_id",
+    allowNull: false
+  },
+  onDelete: "CASCADE"
+});
 
 module.exports = db;
