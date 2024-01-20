@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Button from './Button'
 import { useNavigate } from "react-router-dom";
 
 const Header = ({title, titlealign}) => {
