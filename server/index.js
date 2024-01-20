@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
     res.send("Hello world");
-    console.log(process.env.DB_PASSWORD);
 })
 
 app.listen(PORT, () => {
