@@ -55,13 +55,13 @@ const ItineraryList = () => {
                     'id': 1,
                     'country_name':'Singapore',
                     'budget':500,
-                    'destination':['Marina Bay Sands', 'Gardens by the Bay']
+                    'destination':[{'id': 1, 'name': 'Marina Bay Sands'}, {'id':2, 'name': 'Gardens by the Bay'}]
                 },
                 {  
                     'id': 2,
                     'country_name':'Singapore',
                     'budget':800,
-                    'destination':['Sentosa Island','Universal Studios Singapore']
+                    'destination':[{'id':3, 'name': 'Sentosa Island'},{'id':4, 'name':'Universal Studios Singapore'}]
                 }
 
             ]

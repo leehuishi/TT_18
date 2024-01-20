@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function EditDestination() {
+function Destination() {
   const [name, setName] = useState("");
   const [cost, setCost] = useState("");
   const [notes, setNotes] = useState("");
@@ -66,7 +66,7 @@ function EditDestination() {
 
   return (
     <div className="destination-form-container">
-      <h2>Edit Existing Destination</h2>
+      <h2>Add New Destination</h2>
       <form className="destination-form" onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="name">Name:</label>
@@ -101,7 +101,7 @@ function EditDestination() {
         </div>
 
         <div className="form-buttons">
-          <button type="submit">Edit</button>
+          <button type="submit">Add</button>
           <button
             type="button"
             className="cancel-button"
@@ -115,4 +115,4 @@ function EditDestination() {
   );
 }
 
-export default EditDestination;
+export default Destination;
