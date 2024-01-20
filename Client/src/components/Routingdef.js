@@ -1,13 +1,6 @@
-
-import Loginpage from './Loginpage';
-import Dashboard from './Dashboard';
-import Header from './Header';
-import Headerafter from './Headerafter';
-import Addclaim from './Addclaim';
-import Editclaim from './Editclaim';
-import Cancelclaim from './Cancelclaim';
-import Deleteclaim from './Deleteclaim';
 import { Route, Routes } from "react-router-dom";
+import Itinerary from './Itinerary';
+
 
 const Routingdef = () => {
   return (
@@ -17,12 +10,12 @@ const Routingdef = () => {
         path='/'
         element = {
           <div className="container">
-            <Loginpage />
+            <Itinerary />
           </div>
         }
       />
     
-      <Route 
+      {/* <Route 
         path="/Dashboard" 
         element={
           <>
@@ -33,7 +26,7 @@ const Routingdef = () => {
           </>
           
         } 
-      />
+      /> */}
 
 
       <Route 
@@ -41,32 +34,31 @@ const Routingdef = () => {
         element={
           <>
             <div className="container2">
-              <Header /> 
-              <Addclaim />
+              <Itinerary/>
             </div>
           </>
         } 
       />
 
-      <Route 
+      {/* <Route 
         path='/Destination' 
         element={
           <>
             <div className="container2">
               <Header /> 
-              <Editclaim />
+              {/* <Editclaim /> */}
             </div>
           </>
         } 
-      />
+      /> */}
 
-      <Route 
+      {/* <Route 
         path='/CancelIternary/:id' 
         element={
           <>
             <div className="container2">
               <Header /> 
-              <Cancelclaim />
+              {/* <Cancelclaim /> */}
             </div>
           </>
         } 
@@ -79,11 +71,23 @@ const Routingdef = () => {
           <>
             <div className="container2">
               <Header /> 
-              <Deleteclaim />
+              {/* <Deleteclaim /> */}
             </div>
           </>
         } 
       />
+
+<Route 
+        path='/DeleteDestination/:id' 
+        element={
+          <>
+            <div className="container2">
+              <Header /> 
+              {/* <Deleteclaim /> */}
+            </div>
+          </>
+        } 
+      /> */}
     
     </Routes>
 

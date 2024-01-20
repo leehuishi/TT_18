@@ -188,7 +188,11 @@ td {
 }
 
 .error {
-  color: red;
+  color:red;
+}
+
+.added {
+  color: green;
 }
 
 .form-control {
@@ -220,4 +224,82 @@ td {
 .form-control-check input {
   flex: 2;
   height: 20px;
+}
+
+/* CSS For Destination.js */
+
+.destination-form-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.destination-form {
+  background: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-group textarea {
+  resize: vertical;
+  height: 35px; /* Adjust to match the height of input boxes */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.destination-form button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.destination-form button:hover {
+  background-color: #45a049;
+}
+
+.destination-form .cancel-button {
+  background-color: #f44336;
+}
+
+.destination-form .cancel-button:hover {
+  background-color: #d32f2f;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.drop-down {
+  margin: 5px;
+  height: 40px;
+  width: 438px;
 }

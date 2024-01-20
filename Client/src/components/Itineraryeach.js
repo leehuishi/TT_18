@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react'
 import { FaTimes, FaEdit } from 'react-icons/fa'
+<<<<<<< HEAD
 
 const Itineraryeach = ({ claim, onCancel, onEdit, onDelete }) => {
   const [Statuscolor, setStatuscolor] = useState('')
@@ -55,6 +56,31 @@ const Itineraryeach = ({ claim, onCancel, onEdit, onDelete }) => {
             </>
           )}</td>
     </tr>
+=======
+import Destinationeach from './Destinationeach'
+
+const Itineraryeach = ({ itinerary, onEdit, onDelete }) => {
+  return (
+    <tr>
+        <td style={{paddingRight: '5px'}}>{itinerary.id}</td>
+        <td style={{paddingRight: '5px'}}>{itinerary.country_name}</td>
+        <td style={{paddingRight: '5px'}}>{itinerary.budget}</td>
+        <td style={{paddingRight: '5px'}}>
+          <table>
+          {/* {itinerary.destination} */}
+            {itinerary.destination.map((destination) => (
+              <Destinationeach destination={destination} />
+            ))}
+          </table>
+        </td>
+        <td>
+          <FaEdit style={{cursor:'pointer'}} onClick={() => onEdit(itinerary.id)}/>
+          &nbsp;&nbsp;
+          <FaTimes style={{color: 'red', cursor:'pointer'}} onClick={() => onDelete(itinerary.id)} />
+        </td>
+    </tr>
+    
+>>>>>>> login
   )
 }
 
