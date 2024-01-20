@@ -12,7 +12,13 @@ module.exports = (sequelize, Sequelize) => {
                 type: Sequelize.INTEGER,
                 foreignKey: true
             },
+            cost: {
+                type: Sequelize.FLOAT
+            },
             name: {
+                type: Sequelize.STRING
+            },
+            notes: {
                 type: Sequelize.STRING
             }
         },
