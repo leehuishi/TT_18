@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const db = require("./server/models");
+const db = require("./models");
 
 dotenv.config();
 
@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 })
 
 // routers
-const user_router = require('./app/routes/user_routes.js');
+const user_router = require('./routes/user_routes.js');
 
 app.use('/api/users', user_router);
 
