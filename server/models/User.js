@@ -26,7 +26,6 @@ module.exports = (sequelize, Sequelize) => {
       tableName:'user',
       createdAt: false,
       updatedAt: false
-    }
-    );
+    });
     return User;
   };

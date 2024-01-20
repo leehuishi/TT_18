@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 module.exports = {
     HOST: "localhost",
     USER: "root",
-    PASSWORD: "root",
+    PASSWORD: "password",
     DB: "techtrek24",
     dialect: "mysql",
     pool: {
