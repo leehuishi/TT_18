@@ -21,8 +21,8 @@ db.sequelize = sequelize;
 db.Op = Sequelize.Op;
 
 db.user = require("./User.js")(sequelize, Sequelize);
-// db.posts = require("./posts_model.js")(sequelize, Sequelize);
-// db.blacklistToken = require('./blacklist_jwt.js')(sequelize, Sequelize);
+db.blacklistToken = require('./BlackList.js')(sequelize, Sequelize);
+
 
 // db.users.hasMany(db.posts, {
 //   foreignKey: {
