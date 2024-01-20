@@ -14,7 +14,10 @@ module.exports = (sequelize, Sequelize) => {
             }
         },
         {
-            tableName:'country'
+            tableName:'country',
+            underscored: true,
+            createdAt: false,
+            updatedAt: false
         }
     );
     return Country;

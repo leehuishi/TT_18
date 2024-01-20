@@ -18,7 +18,10 @@ module.exports = (sequelize, Sequelize) => {
             }
         },
         {
-            tableName:'itinerary_destination'
+            tableName:'itinerary_destination',
+            underscored: true,
+            createdAt: false,
+            updatedAt: false
         }
     );
 

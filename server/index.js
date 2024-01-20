@@ -20,7 +20,7 @@ db.sequelize.authenticate().then(() => {
   });
 
 // routers
-const userRouter = require('./routes/user_routes.js');
+const userRouter = require('./routes/UserRoutes.js');
 
 app.use('/api/users', userRouter);
 

@@ -19,16 +19,13 @@ module.exports = (sequelize, Sequelize) => {
       },
       password: {
         type: Sequelize.STRING
-      }
+      },
     },
     {
-      // Options
-      timestamps: true,
-      underscrored: true,
+      underscored: true,
+      tableName:'user',
       createdAt: false,
-      updatedAt: false,
-      tableName:'user'
-    }
-    );
+      updatedAt: false
+    });
     return User;
   };
