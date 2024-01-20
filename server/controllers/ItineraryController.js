@@ -15,11 +15,17 @@ const getAllItineraries = async (req, res) => {
 
 const createItinerary = async (req, res) => {
     const curr_user = req.user;
+<<<<<<< HEAD
 
     
     const itinerayInfo = {
         user_id:1,
         country_id: 1,
+=======
+    const itineraryInfo = {
+        user_id:curr_user.id,
+        country_id:req.body.country_id,
+>>>>>>> dc38354da80e34800f72174e9d29b0f288cf1629
         budget:req.body.budget,
         title:req.body.title
 
