@@ -32,10 +32,12 @@ db.sequelize.sync({force: false})
 const userRouter = require('./routes/UserRoutes.js');
 const itineraryRouter = require('./routes/ItineraryRoutes.js');
 const destinationRouter = require('./routes/DestinationRoutes.js');
+const countryRouter = require('./routes/CountryRoutes.js');
 
 app.use('/api/users', userRouter);
 app.use('/api/itineraries', itineraryRouter);
 app.use('/api/destination', destinationRouter);
+app.use('/api/country', countryRouter);
 
 app.get("/", (req, res) => {
     res.send("Hello world");
