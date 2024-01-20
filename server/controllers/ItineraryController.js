@@ -59,7 +59,6 @@ const updateItinerary = async (req, res) => {
         }})
     res.status(200).send(itinerary);
 
-
 }
 
 module.exports = {
