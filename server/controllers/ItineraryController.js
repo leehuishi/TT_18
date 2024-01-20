@@ -15,7 +15,7 @@ const getAllItineraries = async (req, res) => {
 
 const createItinerary = async (req, res) => {
     const curr_user = req.user;
-    const itinerayInfo = {
+    const itineraryInfo = {
         user_id:curr_user.id,
         country_id:req.body.country_id,
         budget:req.body.budget,

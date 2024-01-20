@@ -24,6 +24,7 @@ db.user = require("./User.js")(sequelize, Sequelize);
 db.itinerary = require("./Itinerary.js")(sequelize, Sequelize);
 db.country = require("./Country.js")(sequelize, Sequelize);
 db.destination = require("./Destination.js")(sequelize, Sequelize);
+db.itineraryDestination = require("./ItineraryDestination.js")(sequelize, Sequelize);
 db.blacklistToken = require('./BlackList.js')(sequelize, Sequelize);
 
 // foreign key mapping
