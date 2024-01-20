@@ -26,11 +26,6 @@ const userRouter = require('./routes/UserRoutes.js');
 app.use('/api/users', userRouter);
 
 
-// routers
-const user_router = require('./routes/user_routes.js');
-
-app.use('/api/users', user_router);
-
 app.get("/", (req, res) => {
     res.send("Hello world");
 })
