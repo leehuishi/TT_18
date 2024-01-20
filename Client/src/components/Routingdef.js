@@ -2,10 +2,11 @@
 import Loginpage from './Loginpage';
 import Dashboard from './Dashboard';
 import Header from './Header';
-import Addclaim from './Addclaim';
-import Editclaim from './Editclaim';
-import Cancelclaim from './Cancelclaim';
-import Deleteclaim from './Deleteclaim';
+import Headerafter from './Headerafter';
+// import Addclaim from './Addclaim';
+// import Editclaim from './Editclaim';
+// import Cancelclaim from './Cancelclaim';
+// import Deleteclaim from './Deleteclaim';
 import { Route, Routes } from "react-router-dom";
 
 const Routingdef = () => {
@@ -24,10 +25,13 @@ const Routingdef = () => {
       <Route 
         path="/Dashboard" 
         element={
-          <div className="container2"> 
-            <Header />
-            <Dashboard />
-          </div>
+          <>
+            <Headerafter />
+            <div className="container2"> 
+              <Dashboard />
+            </div>
+          </>
+          
         } 
       />
 
@@ -38,7 +42,7 @@ const Routingdef = () => {
           <>
             <div className="container2">
               <Header /> 
-              <Addclaim />
+              {/* <Addclaim /> */}
             </div>
           </>
         } 
@@ -50,7 +54,7 @@ const Routingdef = () => {
           <>
             <div className="container2">
               <Header /> 
-              <Editclaim />
+              {/* <Editclaim /> */}
             </div>
           </>
         } 
@@ -62,7 +66,7 @@ const Routingdef = () => {
           <>
             <div className="container2">
               <Header /> 
-              <Cancelclaim />
+              {/* <Cancelclaim /> */}
             </div>
           </>
         } 
@@ -75,7 +79,19 @@ const Routingdef = () => {
           <>
             <div className="container2">
               <Header /> 
-              <Deleteclaim />
+              {/* <Deleteclaim /> */}
+            </div>
+          </>
+        } 
+      />
+
+<Route 
+        path='/DeleteDestination/:id' 
+        element={
+          <>
+            <div className="container2">
+              <Header /> 
+              {/* <Deleteclaim /> */}
             </div>
           </>
         } 
