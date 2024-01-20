@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const db = require("./models");
 
@@ -10,7 +11,9 @@ const PORT = 3001;
 
 const app = express();
 
-// app.use(cors());
+
+app.use(cors());
+
 app.use(bodyParser.json());
 
 db.sequelize.authenticate().then(() => {
@@ -29,7 +32,6 @@ db.sequelize.sync({force: false})
 const userRouter = require('./routes/UserRoutes.js');
 
 app.use('/api/users', userRouter);
-
 
 app.get("/", (req, res) => {
     res.send("Hello world");
